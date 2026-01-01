@@ -1,4 +1,8 @@
-# Profile
+---
+layout: page
+title: Profile
+---
+
 
 ### Social Media
 
