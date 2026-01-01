@@ -1,4 +1,4 @@
-# Data Geek
-This page is designed to present and discuss my considerations on data analysis and bioinformatics, from a data-driven guy. 
+# André Boler Barros
 
-Test
+### Current Role
+- Bioinformatician & Data Scientist at [Gulbenkian Institute for Molecular Medicine (GIMM)](https://gimm.pt/)
