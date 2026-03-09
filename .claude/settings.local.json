@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:scholar.google.pt)",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:bsky.app)",
+      "WebFetch(domain:orcid.org)",
+      "WebFetch(domain:pub.orcid.org)",
+      "WebFetch(domain:loop.frontiersin.org)",
+      "WebFetch(domain:www.researchgate.net)",
+      "WebFetch(domain:www.cienciavitae.pt)"
+    ]
+  }
+}

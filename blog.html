@@ -1,0 +1,36 @@
+---
+layout: default
+title: Blog
+permalink: /blog
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>Blog</h1>
+    <p>Thoughts on data, science, and interesting things from around the internet</p>
+  </div>
+</div>
+
+<section class="page-section">
+  <div class="container container-narrow">
+    <div class="blog-list">
+      {% if site.posts.size > 0 %}
+        {% for post in site.posts %}
+        <a href="{{ post.url | relative_url }}" class="blog-card">
+          <p class="blog-date">
+            <i class="fa-regular fa-calendar"></i> {{ post.date | date: "%B %d, %Y" }}
+          </p>
+          <h2>{{ post.title }}</h2>
+          <p class="blog-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+        </a>
+        {% endfor %}
+      {% else %}
+        <div class="blog-empty">
+          <i class="fa-solid fa-pen-nib"></i>
+          <h3>Coming Soon</h3>
+          <p>Posts are on the way. Stay tuned for thoughts on data science, bioinformatics, and interesting finds from the internet.</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="{{ '/' | relative_url }}" class="nav-logo">
+        <span class="logo-text">AB</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+        <li><a href="{{ '/experience' | relative_url }}" class="nav-link">Experience</a></li>
+        <li><a href="{{ '/papers' | relative_url }}" class="nav-link">Papers</a></li>
+        <li><a href="{{ '/blog' | relative_url }}" class="nav-link active">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-section">
+      <div class="container container-narrow">
+        <article class="blog-post-full">
+          <header class="post-header">
+            <a href="{{ '/blog' | relative_url }}" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Blog</a>
+            <h1 class="post-title-full">{{ page.title }}</h1>
+            <div class="post-meta-full">
+              <time datetime="{{ page.date | date_to_xmlschema }}">
+                <i class="fa-regular fa-calendar"></i> {{ page.date | date: "%B %d, %Y" }}
+              </time>
+              {% if page.tags.size > 0 %}
+              <div class="post-tags">
+                {% for tag in page.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </header>
+          <div class="post-content">
+            {{ content }}
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p class="footer-name">André Boler Barros, PhD</p>
+          <p class="footer-role">Bioinformatician & Data Scientist</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://bsky.app/profile/asbarros.bsky.social" target="_blank" aria-label="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
+          <a href="https://linkedin.com/in/andrebolerbarros" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://scholar.google.pt/citations?user=sZ6EbFAAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+          <a href="https://orcid.org/0000-0002-6139-5013" target="_blank" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
+          <a href="https://github.com/andrebolerbarros" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {{ 'now' | date: '%Y' }} André Boler Barros</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

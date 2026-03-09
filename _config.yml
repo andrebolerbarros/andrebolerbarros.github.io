@@ -1,1 +1,13 @@
-theme: minima
+title: André Boler Barros
+description: Bioinformatician & Data Scientist
+url: "https://andrebolerbarros.github.io"
+baseurl: ""
+
+markdown: kramdown
+permalink: /blog/:title/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
